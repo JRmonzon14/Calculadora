@@ -1,0 +1,317 @@
+Algoritmo Calculadora
+	Definir Opcion Como Entero
+	Definir Num1 Como Real
+	Definir Num2 Como Real
+	Definir Resultado Como Real
+	//Repetir
+		
+	 
+	escribir " BIENVENIDO AL MENU "
+	escribir "--------------------"
+	Escribir "  ----------------  "
+	Escribir " A continuación encontrará un menú con las opciones que puede realizar con nuestra calculadora "
+	Escribir "Digite la opción que desee realizar según el número que tenga asignado. Ej: presione 1 si desea hacer una suma"
+	Escribir "-------- MENU --------"
+	
+	Escribir "1. Suma"
+	Escribir "2. Resta"
+	Escribir "3. Multiplicación"
+	Escribir "4. División"
+	Escribir "5. Sumar todos los valores de la matriz"
+	Escribir "6. Restar todos los valores de la matriz"
+	Escribir "7. Suma de matrices"
+	Escribir "8. Resta de matrices"
+	Escribir "9. Triángulo con números"
+	Escribir "10. Rectángulo con asteríscos"
+	Escribir "11. Salir"
+	
+	Escribir "Ingrese la opción que desea realizar"
+	Leer Opcion
+	
+	Segun Opcion Hacer
+		Caso 1: 
+			
+			Definir cantidad, numero, suma, i Como Entero
+			
+			Escribir "Ingrese la cantidad de numeros que desea sumar:"
+			Leer cantidad
+			
+			suma <- 0
+			
+			Para i <- 1 Hasta cantidad Con Paso 1 Hacer
+				Escribir " *Ingrese el numero ", i, ":"
+				Leer numero
+				suma <- suma + numero
+			FinPara
+			
+			Escribir "La suma de los ", cantidad, " numeros ingresados es: ", suma 
+			
+			
+		Caso 2:
+			Definir cantidad, numero, resta, i Como Entero
+			
+			Escribir " *Ingrese la cantidad de numeros que desea restar:"
+			Leer cantidad
+			
+			// Verificar que la cantidad sea mayor que cero
+			Si cantidad > 0 Entonces
+				// Leer el primer número y asignarlo a 'resta'
+				Escribir " *Ingrese el numero 1:"
+				Leer resta
+				
+				// Leer y restar los números restantes
+				Para i <- 2 Hasta cantidad Con Paso 1 Hacer
+					Escribir " *Ingrese el numero ", i, ":"
+					Leer numero
+					resta <- resta - numero
+				FinPara
+				
+				Escribir " *La resta de los ", cantidad, " numeros ingresados es: ", resta
+			SiNo
+				Escribir "La cantidad de números debe ser mayor que cero."
+			FinSi
+			
+			
+		Caso 3:	
+			Escribir " *Usted a elegido la opcion de multiplicar"
+			Escribir "Ingrese los valores que desea multiplicar"
+			Escribir " *Digite el primer numero que desea multiplicar"
+			Leer Num1
+			Escribir " *Digite el segundo numero que desea multiplicar"
+			Leer Num2
+			Resultado <- Num1 * Num2
+			
+			Escribir "El resultado es: ", Resultado
+			
+			
+			
+		Caso 4:
+			Escribir " *Usted a elegido la opcion de dividir"
+			Escribir "Ingrese los valores que desea dividir"
+			Escribir " *Digite el primer numero que desea dividir"
+			Leer Num1
+			Escribir " *Digite el segundo numero que desea dividir"
+			Leer Num2
+			Resultado <- Num1 / Num2
+			
+			Escribir "El resultado es: ", Resultado
+			
+			
+		Caso 5: 
+			// Declaración de variables
+			Definir filas, columnas, suma Como Entero
+			suma <- 0
+			
+			// Solicitar al usuario la cantidad de filas y columnas
+			Escribir "Ingrese la cantidad de filas de la matriz: "
+			Leer filas
+			Escribir "Ingrese la cantidad de columnas de la matriz: "
+			Leer columnas
+			
+			// Crear la matriz vacía
+			Dimension matriz[filas, columnas]
+			
+			// Inicializar la matriz con ceros (opcional)
+			Para i <- 1 Hasta filas Hacer
+				Para j <- 1 Hasta columnas Hacer
+					matriz[i, j] <- 1
+				FinPara
+			FinPara
+			
+			// Mostrar la matriz vacía
+			Escribir "Matriz vacía: "
+			Para i <- 1 Hasta filas Hacer
+				Para j <- 1 Hasta columnas Hacer
+					Escribir Sin Saltar matriz[i, j], " "
+				FinPara
+				Escribir "" // Salto de línea
+			FinPara
+			
+			// Sumar los elementos de la matriz
+			Para i <- 1 Hasta filas Hacer
+			  Para j <- 1 Hasta columnas Hacer
+            suma <- suma + matriz[i, j]
+			FinPara
+			FinPara
+			
+			// Mostrar la suma de los elementos de la matriz
+			Escribir "La suma de los elementos de la matriz es: ", suma
+			
+			
+		Caso 6:
+			// Declaración de variables
+			Definir filas, columnas, resta Como Entero
+			resta <- 0
+			
+			// Solicitar al usuario la cantidad de filas y columnas
+			Escribir "Ingrese la cantidad de filas de la matriz: "
+			Leer filas
+			Escribir "Ingrese la cantidad de columnas de la matriz: "
+			Leer columnas
+			
+			// Crear la matriz vacía
+			Dimension matriz[filas, columnas]
+			
+			// Inicializar la matriz con unos 
+			Para i <- 1 Hasta filas Hacer
+				Para j <- 1 Hasta columnas Hacer
+					matriz[i, j] <- 1
+				FinPara
+			FinPara
+			
+			// Mostrar la matriz vacía
+			Escribir "Matriz vacía: "
+			Para i <- 1 Hasta filas Hacer
+				Para j <- 1 Hasta columnas Hacer
+					Escribir Sin Saltar matriz[i, j], " "
+				FinPara
+				Escribir "" // Salto de línea
+			FinPara
+			
+			//Retar los elementos de la matriz
+			Para i <- 1 Hasta filas Hacer
+			  Para j <- 1 Hasta columnas Hacer
+            resta <- resta - matriz[i, j]
+			 FinPara
+			FinPara
+			
+			// Mostrar la resta de los elementos de la matriz
+			Escribir "La resta de los elementos de la matriz es: ", suma
+			
+			
+		Caso 7:
+			Definir filas, columnas, suma, i, j Como Entero
+			Definir matriz Como Entero
+			
+			// Solicitar el tamaño de la matriz
+			Escribir "Ingrese el número de filas de la matriz:"
+			Leer filas
+			Escribir "Ingrese el número de columnas de la matriz:"
+			Leer columnas
+			
+			// Inicializar la matriz
+			Dimension matriz[filas, columnas]
+			
+			// Solicitar los valores de la matriz
+			Para i = 1 Hasta filas Con Paso 1 Hacer
+				Para j = 1 Hasta columnas Con Paso 1 Hacer
+					Escribir "Ingrese el valor para la posición [", i, ",", j, "]:"
+					Leer matriz[i, j]
+				FinPara
+			FinPara
+			
+			// Mostrar la matriz "pintada"
+			Escribir "Matriz ingresada:"
+			Para i = 1 Hasta filas Con Paso 1 Hacer
+				Para j = 1 Hasta columnas Con Paso 1 Hacer
+					Escribir Sin Saltar matriz[i, j], " "
+				FinPara
+				Escribir "" // Para saltar a la siguiente línea después de cada fila
+			FinPara
+			
+			// Sumar los elementos de la matriz
+			Para i <- 1 Hasta filas Hacer
+				Para j <- 1 Hasta columnas Hacer
+					suma <- suma + matriz[i, j]
+				FinPara
+			FinPara
+			
+			
+			
+			// Mostrar el resultado de la suma
+			Escribir "La suma de todos los valores de la matriz es:", suma
+			
+			
+		Caso 8: 
+			Definir filas, columnas, resta, i, j Como Entero
+			Definir matriz Como Entero
+			
+			// Solicitar el tamaño de la matriz
+			Escribir "Ingrese el número de filas de la matriz:"
+			Leer filas
+			Escribir "Ingrese el número de columnas de la matriz:"
+			Leer columnas
+			
+			// Inicializar la matriz
+			Dimension matriz[filas, columnas]
+			
+			// Solicitar los valores de la matriz
+			Para i = 1 Hasta filas Con Paso 1 Hacer
+				Para j = 1 Hasta columnas Con Paso 1 Hacer
+					Escribir "Ingrese el valor para la posición [", i, ",", j, "]:"
+					Leer matriz[i, j]
+				FinPara
+			FinPara
+			
+			// Mostrar la matriz "pintada"
+			Escribir "Matriz ingresada:"
+			Para i = 1 Hasta filas Con Paso 1 Hacer
+				Para j = 1 Hasta columnas Con Paso 1 Hacer
+					Escribir Sin Saltar matriz[i, j], " "
+				FinPara
+				Escribir "" // Para saltar a la siguiente línea después de cada fila
+			FinPara
+			
+			// Restar los elementos de la matriz
+			Para i <- 1 Hasta filas Hacer
+				Para j <- 1 Hasta columnas Hacer
+					resta <- resta - matriz[i, j]
+				FinPara
+			FinPara
+			
+			
+			// Mostrar el resultado de la resta
+			Escribir "La resta de todos los valores de la matriz es:", resta
+			
+			
+		Caso 9:
+			
+				Definir num, i, j, k como Entero
+				Definir fila como Cadena
+				Escribir "Ingrese un número entero para el triángulo:"
+				Leer num
+				k <- 1
+				Para i <- 1 Hasta num
+					fila <- ""
+					Para j <- 1 Hasta i
+						fila <-  ConvertirATexto(k) +fila + " "
+						k <- k + 2
+					FinPara
+					Escribir fila
+					k <- 1  // Reiniciar k para la siguiente fila
+				FinPara
+			
+			
+		Caso 10:
+			Definir num, i, j como Entero
+			Definir fila como Cadena
+			Escribir "Ingrese un número entero para el rectángulo:"
+			Leer num
+			Para i <- 1 Hasta num
+				Si i = 1 O i = num Entonces
+					fila <- "*"
+					Para j <- 2 Hasta num
+						fila <- fila + " *"
+					FinPara
+				Sino
+					fila <- "*"
+					Para j <- 2 Hasta num
+						fila <- fila + "  "
+					FinPara
+					fila <- fila + "*"
+				FinSi
+				Escribir fila
+			FinPara
+			
+			
+		// Caso 0:
+			//Escribir "Saliendo del programa..."
+		//De Otro Modo:
+			//Escribir "Opción no válida. Por favor, seleccione una opción válida."
+			FinSegun
+			
+		//Hasta Que opcion = 0
+			
+	
+	
+FinAlgoritmo
